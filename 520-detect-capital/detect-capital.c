@@ -1,18 +1,16 @@
 bool detectCapitalUse(char* word)
 {
-    int i;
     int len;
     int upperCount;
 
-    i = 0;
-    len = strlen(word);
+    len = 0;
     upperCount = 0;
 
-    while (i < len)
+    while (word[len] != '\0')
     {
-        if (isupper(word[i]))
+        if (isupper(word[len]))
             upperCount++;
-        i++;
+        len++;
     }
     if (upperCount == 0 || upperCount == len || (upperCount == 1 && isupper(word[0])))
         return (true);
