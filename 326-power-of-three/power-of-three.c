@@ -1,11 +1,18 @@
 bool isPowerOfThree(int n)
 {
-    int i;
+    long long int i;
 
+    if (n == 1)
+        return (true);
     if (n < 1)
         return (false);
-    i = 0;
-    while (n % 3 == 0)
-        n /= 3;
-    return (n == 1);
+    i = 1;
+    while (1)
+    {
+        i *= 3;
+        if (i == n)
+            return (true);
+        if (i > n)
+            return (false);
+    }
 }
