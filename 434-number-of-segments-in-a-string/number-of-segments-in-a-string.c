@@ -2,19 +2,19 @@ int countSegments(char* s)
 {
     int i;
     int count;
+    int len;
 
     i = 0;
     count = 0;
-    if (strlen(s) == 0)
-        return (0);
-    while (i < strlen(s))
+    len = strlen(s);
+    while (i < len)
     {
         while (s[i] == ' ')
             i++;
-        if (s[i] != '\0')
+        if (i < len && s[i] != ' ')
         {
             count++;
-            while (s[i] != ' ' && s[i])
+            while (s[i] != ' ' && i < len)
                 i++;
         }
         i++;
