@@ -27,7 +27,6 @@ bool lemonadeChange(int* bills, int billsSize)
             else
                 return (false);
         }
-        printf("5: %d\t10: %d\n", arr[0], arr[1]);
         i++;
     }
     return (true);
