@@ -2,7 +2,7 @@ bool lemonadeChange(int* bills, int billsSize)
 {
     int    arr[2] = {0};
     int i;
-
+    
     i = 0;
     while (i < billsSize)
     {
