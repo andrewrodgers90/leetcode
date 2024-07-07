@@ -3,13 +3,17 @@ bool checkPerfectNumber(int num)
     int sum;
     int i;
 
-    sum = 0;
-    i = 1;
-    while (i <= num / 2)
+    if (num <= 1)
+        return (false);
+    sum = 1;
+    for (int i = 2; i <= (int)sqrt(num); i++)
     {
         if (num % i == 0)
+        {
             sum += i;
-        i++;
+            if (i != num / i)
+                sum += num / i;
+        }
     }
     return (sum == num);
 }
