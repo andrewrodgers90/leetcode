@@ -1,21 +1,31 @@
 char findTheDifference(char* s, char* t)
 {
-    char    arr[126] = {0};
+    int     len1 = strlen(s);
+    int     len2 = strlen(t);
+    int     total_len = len1 + len2;
+    int     i = 0;
+    int     j = 0;
+    char    *combined;
+    char    new = 0;
 
-    for (int i = 0; i < strlen(s); i++)
+    combined = (char *)malloc(sizeof(char) * (len1 + len2 + 1));
+    if (NULL == combined)
+        return (NULL);
+    
+    while (i < strlen(s))
     {
-        arr[s[i]] += 1;
+        combined[i] = s[i];
+        i++;
     }
-    for (int j = 0; j < strlen(t); j++)
+    while (j < strlen(t))
     {
-        arr[t[j]] -= 1;
+        combined[i + j] = t[j];
+        j++;
     }
-    int k = 0;
-    while (k < 126)
+    combined[i + j] = '\0';
+    for (int k = 0; k < strlen(combined); k++)
     {
-        if (arr[k] == -1)
-            break ;
-        k++;
+        new ^= combined[k];
     }
-    return ((char)k);
+    return (new);
 }
