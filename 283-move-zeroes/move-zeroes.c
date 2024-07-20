@@ -9,7 +9,5 @@ void moveZeroes(int* nums, int numsSize)
             nums[k++] = nums[i];
     }
     while (k < numsSize)
-    {
         nums[k++] = 0;
-    }
 }
